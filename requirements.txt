@@ -1,3 +1,1 @@
-socket
-_thread
-threading
+pyOpenSSL==19.0.0

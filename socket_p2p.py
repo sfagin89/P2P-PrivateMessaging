@@ -6,6 +6,8 @@
 # Users can send messages between eachother with the
 # Recipient's IP.
 #
+# Tested with Python 3.7.3
+#
 # Current Functionality:
 # - Application starts in Server Listening Mode
 # - A lock is set everyime the application checks if a message is being received
@@ -33,6 +35,7 @@
 # - openssl base64 -in password.enc -out password-base64encoded.txt
 # - openssl base64 -d -in encrypted_password.txt -out encrypted_password.enc
 # - openssl rsautl -decrypt -inkey private_key.pem -in encrypted_password.enc -out decrypted_password.txt
+# Link: https://pypi.org/project/pyOpenSSL/
 #
 # Ideas:
 # - If server isn't listening or busy when client tries to send a message
@@ -44,6 +47,7 @@
 import socket
 from _thread import *
 import threading
+from OpenSSL import SSL
 
 s_global = 0
 debug = 1
