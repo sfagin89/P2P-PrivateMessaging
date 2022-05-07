@@ -23,7 +23,16 @@
 # Planned Functionality
 # - Graceful Exit at all stages of application
 # - Encryption Functionality
-#   -
+#   - User places acquired Public key in same directory as application
+#   - When message is input, application encrypts it using the Public Key
+#     before sending to recipient
+#
+# Commands to Implement for Message Encryption/Decryption
+# - echo 'message' > password.txt
+# - openssl rsautl -encrypt -inkey partner_pubkey.pem -pubin -in password.txt -out password.enc
+# - openssl base64 -in password.enc -out password-base64encoded.txt
+# - openssl base64 -d -in encrypted_password.txt -out encrypted_password.enc
+# - openssl rsautl -decrypt -inkey private_key.pem -in encrypted_password.enc -out decrypted_password.txt
 #
 # Ideas:
 # - If server isn't listening or busy when client tries to send a message
@@ -35,7 +44,6 @@
 import socket
 from _thread import *
 import threading
-import keyboard
 
 s_global = 0
 debug = 1
