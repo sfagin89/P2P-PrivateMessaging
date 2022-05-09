@@ -35,6 +35,7 @@ openssl rsa -pubout -in private_key.pem -out public_key.pem
 The following is needed in order to run the P2P application:
 * The Destination User's Public Key File (Expecting file named 'public_key.pem')
   * The key file must be in the same directory as the application
+  * **IMPORTANT** Encryption isn't fully functioning at this time. For security, please encrypt your message with the public key before inputing it into the application.
 * The Destination User's IP Address
 
 ### Running P2P Application
